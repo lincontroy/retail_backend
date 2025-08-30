@@ -38,6 +38,11 @@
                 </div>
             @endif
 
+            <div class="text-center mb-4">
+                <img src="https://automationeye.com/logo.png" alt="Logo" class="img-fluid" style="max-height: 80px;">
+            </div>
+            
+
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="mb-3">
