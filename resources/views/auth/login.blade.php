@@ -25,6 +25,10 @@
 
 <div class="container-fluid login-container d-flex justify-content-center align-items-center">
     <div class="col-md-4 col-sm-10">
+        <div class="text-center mb-4">
+            <img src="https://automationeye.com/logo.png" alt="Logo" class="img-fluid" style="max-height: 80px;">
+        </div>
+        
         <div class="card shadow-lg p-4 border-0 rounded-4">
             <h3 class="mb-4 text-center fw-bold">Login</h3>
 
@@ -38,10 +42,7 @@
                 </div>
             @endif
 
-            <div class="text-center mb-4">
-                <img src="https://automationeye.com/logo.png" alt="Logo" class="img-fluid" style="max-height: 80px;">
-            </div>
-            
+          
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
