@@ -39,4 +39,33 @@
         </div>
     </div>
 </div>
+
+ {{-- Table --}}
+ <div class="table-responsive">
+    <table class="table table-striped table-bordered align-middle">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Shop</th>
+                <th>User</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Device Info</th>
+                <th>Checked In At</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+                <tr>
+                    <td colspan="7" class="text-center">No checkins found for selected date range.</td>
+                </tr>
+           
+        </tbody>
+    </table>
+</div>
+
+{{-- Pagination --}}
+<div class="mt-3">
+   
+</div>
 @endsection
