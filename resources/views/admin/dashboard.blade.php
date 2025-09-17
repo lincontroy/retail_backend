@@ -6,39 +6,110 @@
     <h1>Admin Dashboard</h1>
     <div class="row">
         <div class="col-md-3">
-            <div class="small-box">
-                <div class="inner">
-                    <h3>{{ $shopsCount }}</h3>
-                    <p>Shops</p>
+            <a href="{{ route('admin.shops.index') }}" class="card-link">
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>{{ $shopsCount }}</h3>
+                        <p>Shops</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-store"></i>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col-md-3">
-            <div class="small-box">
-                <div class="inner">
-                    <h3>{{ $routesCount }}</h3>
-                    <p>Routes</p>
+            <a href="{{ route('admin.routes.index') }}" class="card-link">
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>{{ $routesCount }}</h3>
+                        <p>Routes</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-route"></i>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col-md-3">
-            <div class="small-box">
-                <div class="inner">
-                    <h3>{{ $usersCount }}</h3>
-                    <p>Users</p>
+            <a href="{{ route('admin.users.index') }}" class="card-link">
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>{{ $usersCount }}</h3>
+                        <p>Users</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col-md-3">
-            <div class="small-box">
-                <div class="inner">
-                    <h3>{{ $todayCheckins }}</h3>
-                    <p>Today's Checkins</p>
+            <a href="{{ route('admin.checkins.index') }}" class="card-link">
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>{{ $todayCheckins }}</h3>
+                        <p>Today's Checkins</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
+
+<style>
+    .small-box {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        background: #fff;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        height: 120px;
+        position: relative;
+    }
+    .small-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+    .small-box .inner {
+        padding: 20px;
+    }
+    .small-box h3 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin: 0 0 10px 0;
+        color: #2c3e50;
+    }
+    .small-box p {
+        font-size: 1.1rem;
+        color: #7f8c8d;
+        margin: 0;
+    }
+    .small-box .icon {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        font-size: 2.5rem;
+        opacity: 0.2;
+        color: #34495e;
+        transition: all 0.3s ease;
+    }
+    .small-box:hover .icon {
+        opacity: 0.4;
+        transform: scale(1.1);
+    }
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+    .card-link:hover {
+        color: inherit;
+    }
+</style>
 
  {{-- Table --}}
  <div class="table-responsive">
