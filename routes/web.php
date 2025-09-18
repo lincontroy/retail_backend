@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ShopController;
 use App\Http\Controllers\Admin\RouteController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\CheckinController;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -22,6 +23,7 @@ Route::middleware(['auth','role:admin'])->prefix('admin')->as('admin.')->group(f
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 
     // Route::resource('users', UserController::class);
+    Route::resource('products', ProductController::class);
     Route::resource('shops', ShopController::class);
     Route::resource('routes', RouteController::class);
     Route::get('checkins', [CheckinController::class,'index'])->name('checkins.index');

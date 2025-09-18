@@ -45,11 +45,11 @@
             </a>
         </div>
         <div class="col-md-3">
-            <a href="{{ route('admin.checkins.index') }}" class="card-link">
+            <a href="{{ route('admin.products.index') }}" class="card-link">
                 <div class="small-box">
                     <div class="inner">
-                        <h3>{{ $todayCheckins }}</h3>
-                        <p>Today's Checkins</p>
+                        <h3>{{ $productCount }}</h3>
+                        <p>Total products</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-check-circle"></i>

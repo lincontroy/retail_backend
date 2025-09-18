@@ -298,7 +298,7 @@ return [
     |
     */
 
-  'menu' => [
+'menu' => [
     // 🔍 Navbar items
     [
         'type'         => 'navbar-search',
@@ -323,6 +323,11 @@ return [
         'text' => 'Users',
         'url'  => 'admin/users',
         'icon' => 'fas fa-fw fa-users',
+    ],
+    [
+        'text' => 'Products',
+        'url'  => 'admin/products',
+        'icon' => 'fas fa-fw fa-box',
     ],
     [
         'text' => 'Shops',
