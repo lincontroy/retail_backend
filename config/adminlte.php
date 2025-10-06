@@ -334,6 +334,12 @@ return [
         'url'  => 'admin/shops',
         'icon' => 'fas fa-fw fa-store',
     ],
+
+    [
+        'text' => 'Shop Products',
+        'url'  => 'admin/shop-products',
+        'icon' => 'fas fa-fw fa-store',
+    ],
     [
         'text' => 'Routes',
         'url'  => 'admin/routes',

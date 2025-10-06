@@ -126,15 +126,46 @@
             </tr>
         </thead>
         <tbody>
-           
+
+            @php
+            $checkins=App\Models\Checkin::with(['shop', 'user'])->orderBy('checked_in_at', 'desc')->take(10)->get();
+            @endphp
+            @if($checkins->count() > 0)
+                @foreach($checkins as $checkin)
+                <tr>
+                    <td>{{ $checkin->id }}</td>
+                    <td>{{ $checkin->shop->name ?? 'N/A' }}</td>
+                    <td>{{ $checkin->user->name ?? 'N/A' }}</td>
+                    <td>{{ number_format($checkin->latitude, 6) }}</td>
+                    <td>{{ number_format($checkin->longitude, 6) }}</td>
+                    <td>
+                        @if($checkin->device_info)
+                            @php
+                                $deviceInfo = json_decode($checkin->device_info, true);
+                            @endphp
+                            @if($deviceInfo)
+                                <small>
+                                    <strong>{{ $deviceInfo['manufacturer'] ?? 'Unknown' }} {{ $deviceInfo['model'] ?? '' }}</strong><br>
+                                    Android {{ $deviceInfo['android_version'] ?? '' }}
+                                </small>
+                            @else
+                                <span class="text-muted">Invalid device info</span>
+                            @endif
+                        @else
+                            <span class="text-muted">No device info</span>
+                        @endif
+                    </td>
+                    <td>{{ $checkin->checked_in_at }}</td>
+                </tr>
+                @endforeach
+            @else
                 <tr>
                     <td colspan="7" class="text-center">No checkins found for selected date range.</td>
                 </tr>
-           
+            @endif
         </tbody>
     </table>
 </div>
-
 {{-- Pagination --}}
 <div class="mt-3">
    

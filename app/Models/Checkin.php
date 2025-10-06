@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Checkin extends Model
 {
-    protected $fillable = ['shop_id','user_id','latitude','longitude','device_info','checked_in_at'];
+    protected $guarded = [];
 
     protected $dates = ['checked_in_at'];
 
@@ -18,4 +18,8 @@ class Checkin extends Model
     {
         return $this->belongsTo(Shop::class);
     }
+    public function shopProducts()
+{
+    return $this->hasMany(ShopProduct::class, 'shop_id', 'shop_id');
+}
 }
